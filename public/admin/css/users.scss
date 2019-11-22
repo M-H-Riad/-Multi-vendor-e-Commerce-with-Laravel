@@ -1,0 +1,381 @@
+$body-bg: #FFFFFF;
+$border-bg: #E5E5E5;
+
+$white: #ffffff;
+$black: #000000;
+
+$red: #e77338;
+$yellow: #ffd65f;
+$green: #91c46b;
+$blue: #5e83bf;
+$pink: #F782AA;
+$purple: #8B5499;
+$orange: #FF9251;
+$violet: #597FC5;
+$purple: #C790E1;
+$peach: #FF9997;
+$brown: #987345;
+
+/*  Border Radius  */
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Users
+.users-wrapper {
+	padding: 0;
+	position: relative;
+	border-radius: 0;
+	margin-bottom: 10px;
+	background: $white;
+	@include border-radius(2px);
+	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+	&.green {
+		border-top: 2px solid $green;
+	}
+	&.yellow {
+		border-top: 2px solid $yellow;
+	}
+	&.red {
+		border-top: 2px solid $red;
+	}
+	&.blue {
+		border-top: 2px solid $blue;
+	}
+	.users-info {
+		padding: 15px;
+		.users-avatar {
+			width: 60px;
+			height: 60px;
+			float: left;
+			img {
+				@include border-radius (2px);
+			}
+		}
+		.users-detail {
+			margin-left: 75px;
+			h5 {
+				padding: 0;
+				margin: 12px 0 2px 0;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			p {
+				margin: 0;
+				padding: 0;
+				font-size: 11px;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;				
+			}
+		}
+	}
+	ul.users-footer {
+		background: darken($body-bg, 6%);
+		li {
+			float: left;
+			width: 40%;
+			padding: 10px 10px 10px 15px; 
+			box-sizing: border-box;
+			border-left: 1px solid darken($body-bg, 12%);
+			&:first-child {
+				border-left: 0;
+			}
+			&:last-child {
+				width: 20%;
+				border-left: 0;
+			}
+			p {
+				margin: 0;
+				padding: 0;
+				line-height: 100%;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				&.light {
+					margin: 0 0 5px 0;
+					font-size: 11px;
+					font-style: italic;
+				}
+			}
+			.add-btn {
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+				float: right;
+				@include border-radius(30px);
+				background: $body-bg;
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				display: block;
+				i {
+					-webkit-transition: all 0.3s ease-in-out;
+					-moz-transition: all 0.3s ease-in-out;
+					-ms-transition: all 0.3s ease-in-out;
+					-o-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;					
+					color: $green;
+					font-size: 20px;
+					line-height: 30px;
+				}
+				&.added {
+					background: $green;
+					i {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Cards
+.card-wrapper {
+	margin-bottom: 10px;
+	background: darken($body-bg, 1%);
+	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+	border-top: 2px solid darken($white, 25%);
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;	
+	.card {
+		padding: 10px;
+		text-align: center;
+		position: relative;
+		width: 100%;
+		box-sizing: border-box;
+		.card-type {
+			color: $white;
+			position: absolute;
+			right: 15px;
+			top: 0;
+			font-size: 13px;
+			background-color: darken($white, 25%);
+			padding: 10px 5px;
+			width: 36px;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				left: 0;
+				border-top: 8px solid darken($white, 25%);
+				border-right: 16px solid transparent;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				right: 0;
+				border-top: 8px solid darken($white, 25%);
+				border-left: 16px solid transparent;
+			}
+		}
+		img.card-avatar {
+			width: 64px;
+			height: 64px;
+			margin: 30px auto;
+			border: 2px solid $yellow;
+			@include border-radius(2px);
+		}
+		h5 {
+			text-transform: uppercase;
+			font-size: 13px;
+			margin: 0 0 10px 0;
+			font-weight: 500;
+		}
+		p {
+			font-size: 14px;
+			margin: 0 0 10px 0;
+		}
+	}
+	ul.card-actions {
+		text-align: center;
+		li {
+			width: 40px;
+			margin: 0 5px 20px 5px;
+			display: inline-block;
+			.action-btn {
+				display: block;
+				width: 40px;
+				height: 40px;
+				line-height: 38px;
+				background: $body-bg;
+				@include border-radius(10px);
+				border: 1px solid darken($body-bg, 7%);
+				z-index: 1;
+				text-align: center;
+				i {
+					display: block;
+					font-size: 24px;
+					line-height: 38px;
+					color: lighten($black, 70%);
+				}
+				&:hover {
+					border: 1px solid darken($body-bg, 20%);
+					box-shadow: 0 0 10px darken($white, 30%);
+				}
+			}
+		}
+	}
+	&.red {
+		border-top: 2px solid $red;
+		img.card-avatar {
+			border: 2px solid $red;
+		}
+		.card-type {
+			background-color: $red;
+			&:after {
+				border-top: 8px solid $red;
+			}
+			&:before {
+				border-top: 8px solid $red;
+			}
+		}
+	}
+	&.yellow {
+		border-top: 2px solid $yellow;
+		img.card-avatar {
+			border: 2px solid $yellow;
+		}
+		.card-type {
+			color: lighten($black, 30%);
+			background-color: $yellow;
+			&:after {
+				border-top: 8px solid $yellow;
+			}
+			&:before {
+				border-top: 8px solid $yellow;
+			}
+		}
+	}
+	&.pink {
+		border-top: 2px solid $pink;
+		img.card-avatar {
+			border: 2px solid $pink;
+		}
+		.card-type {
+			background-color: $pink;
+			&:after {
+				border-top: 8px solid $pink;
+			}
+			&:before {
+				border-top: 8px solid $pink;
+			}
+		}
+	}
+	&.blue {
+		border-top: 2px solid $blue;
+		img.card-avatar {
+			border: 2px solid $blue;
+		}
+		.card-type {
+			background-color: $blue;
+			&:after {
+				border-top: 8px solid $blue;
+			}
+			&:before {
+				border-top: 8px solid $blue;
+			}
+		}
+	}
+	&.green {
+		border-top: 2px solid $green;
+		img.card-avatar {
+			border: 2px solid $green;
+		}
+		.card-type {
+			background-color: $green;
+			&:after {
+				border-top: 8px solid $green;
+			}
+			&:before {
+				border-top: 8px solid $green;
+			}
+		}
+	}
+	&.violet {
+		border-top: 2px solid $violet;
+		img.card-avatar {
+			border: 2px solid $violet;
+		}
+		.card-type {
+			background-color: $violet;
+			&:after {
+				border-top: 8px solid $violet;
+			}
+			&:before {
+				border-top: 8px solid $violet;
+			}
+		}
+	}
+	&.orange {
+		border-top: 2px solid $orange;
+		img.card-avatar {
+			border: 2px solid $orange;
+		}
+		.card-type {
+			background-color: $orange;
+			&:after {
+				border-top: 8px solid $orange;
+			}
+			&:before {
+				border-top: 8px solid $orange;
+			}
+		}
+	}
+	&.peach {
+		border-top: 2px solid $peach;
+		img.card-avatar {
+			border: 2px solid $peach;
+		}
+		.card-type {
+			background-color: $peach;
+			&:after {
+				border-top: 8px solid $peach;
+			}
+			&:before {
+				border-top: 8px solid $peach;
+			}
+		}
+	}
+	&.purple {
+		border-top: 2px solid $purple;
+		img.card-avatar {
+			border: 2px solid $purple;
+		}
+		.card-type {
+			background-color: $purple;
+			&:after {
+				border-top: 8px solid $purple;
+			}
+			&:before {
+				border-top: 8px solid $purple;
+			}
+		}
+	}
+	&.brown {
+		border-top: 2px solid $brown;
+		img.card-avatar {
+			border: 2px solid $brown;
+		}
+		.card-type {
+			background-color: $brown;
+			&:after {
+				border-top: 8px solid $brown;
+			}
+			&:before {
+				border-top: 8px solid $brown;
+			}
+		}
+	}
+}

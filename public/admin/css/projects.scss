@@ -1,0 +1,193 @@
+$body-bg: #FFFFFF;
+$border-bg: #E5E5E5;
+
+$secondary-color: #707C8E;
+
+$white: #ffffff;
+$black: #000000;
+$black10: #101010;
+$black20: #212121;
+$black30: #353535;
+$black40: #4d4d4d;
+$black50: #808080;
+$black60: #999999;
+$black70: #b3b3b3;
+
+$red: #e77338;
+$yellow: #ffd65f;
+$green: #91c46b;
+$blue: #5e83bf;
+
+/* Border Radius */
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Projects
+.project-block {
+	display: block;
+	padding: 15px;
+	background: $white;
+	@include border-radius(2px);
+	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+	position: relative;
+	border: 1px solid $white;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		border: 1px solid $red;
+	}
+}
+
+p.project-type {
+	margin: 0;
+	color: $black30;
+	font-style: italic;
+	font-size: 13px;
+}
+h5.project-name {
+	margin: 0 0 5px 0;
+	color: $black30;
+	font-size: 16px;
+}
+
+.transparent-bdr {
+	border: 1px solid transparent;
+	cursor: not-allowed
+}
+
+ul.project-time {
+	margin: 0 auto -1px auto;
+	width: 100%;
+	border: 1px solid darken($body-bg, 15%);
+	padding: 5px;
+	li {
+		padding: 0 12px;
+		margin: 5px 0;
+		float: left;
+		width: 50%;
+		text-align: center;
+		border-right: 1px solid darken($body-bg, 15%);
+		font-size: 12px;
+		h3 {
+			color: $blue;
+			font-weight: 500;
+			line-height: 100%;
+			margin: 0;
+			sup {
+				font-size: 50%;
+				vertical-align: middle;
+			}
+		}
+		p {
+			margin: 0;
+			padding: 0;
+			color: $black30;
+			font-weight: 400;
+		}
+		&:last-child {
+			border-right: 0;
+		}
+		&:nth-child(2) {
+			h3 {
+				color: $red;
+			}
+		}
+	}
+}
+ul.project-footer {
+	padding: 5px 10px;
+	border: 1px solid darken($body-bg, 15%);
+	li {
+		width: 33.33%;
+		padding: 3px 12px 0 12px;
+		float: left;
+		border-right: 1px solid darken($body-bg, 15%);
+		font-size: 13px;
+		font-weight: 500;
+		&:last-child {
+			border-right: 0;
+			padding-right: 0;
+		}
+		&:first-child {
+			padding-left: 0;
+		}
+		.stats-infos {
+			padding: 0;
+			font-size: 16px;
+			color: $black30;
+			font-weight: 400;
+			i {
+				margin-right: 5px;
+				font-size: 16px;
+				vertical-align: baseline;
+			}
+		}
+	}
+}
+
+.project-btn {
+	position: absolute;
+	top: 20px;
+	right: 15px;
+	text-align: center;	
+	padding: 0 8px;
+	font-size: 11px;
+	color: $white;
+	&:hover {
+		color: $white;
+	}
+	&:before {
+		position: absolute;
+		left: -10px;
+		top: 0;
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+	}
+	&:after {
+		position: absolute;
+		left: -10px;
+		bottom: 0;
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+	}
+	&.completed {
+		background-color: $green;
+		&:after {
+			border-bottom: 10px solid $green;
+		}
+		&:before {
+			border-top: 10px solid $green;
+		}
+	}
+	&.cancelled {
+		background-color: $red;
+		&:after {
+			border-bottom: 10px solid $red;
+		}
+		&:before {
+			border-top: 10px solid $red;
+		}
+	}
+	&.hold {
+		background-color: $yellow;
+		&:after {
+			border-bottom: 10px solid $yellow;
+		}
+		&:before {
+			border-top: 10px solid $yellow;
+		}
+	}
+}
+
